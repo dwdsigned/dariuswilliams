@@ -1,2 +1,2 @@
-# dariuswilliams
-Future personal website
+# Creating dariuswilliams.dev  
+Under construction

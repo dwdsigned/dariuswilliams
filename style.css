@@ -1,4 +1,5 @@
 
+
 /* :root {
   --primary-color: #3a26ff;
   --primary-variant: #6200eb;
@@ -32,7 +33,7 @@ body {
 }
 
 section {
-  min-height: 100vh;
+  min-height: 95vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,7 +46,7 @@ h1 {
 }
 
 h2 {
-  color: var(--on-background-alt);
+  color: rgb(35 35 35);
   font-size: 32px;
   font-weight: normal;
 }
@@ -116,12 +117,15 @@ nav {
   font-weight: bold;
   text-decoration: none;
   color: rgb(235 235 235);
+  /* transition: 0.5s; */
 }
 
 .navbar__menu .menu__link:hover
  {
   color: rgb(253, 244, 101);
   /* background-color: #2a15bc; */
+  transition: ease 0.3s all;
+  transform: scale(1.3);
 }
 
 /* .navbar__menu .menu__link:hover,
@@ -130,9 +134,34 @@ nav {
   background-color: #2a15bc;
 } */
 
-.navbar__menu .menu__link:focus {
+/* .navbar__menu .menu__link:focus {
   color: rgb(253, 244, 101);
   background-color: #1F066D;
+  border: #ccc;
+} */
+
+.menu__link.active {
+  color: rgb(253, 244, 101);
+  background-color: #1F066D;
+  border: #ccc;
+}
+
+/* Section active style */
+section.active {
+  background: rgb(11, 179, 50);
+  background: linear-gradient(0deg, rgba(208, 21, 21, 0.4) 0%, rgba(65, 129, 5, .6) 100%);
+}
+
+section.active .landing__container::before {
+  opacity: 1;
+  animation: rotate 4s linear 0s infinite forwards;
+  background-color: aquamarine;
+}
+
+section.active .landing__container::after {
+  opacity: 1;
+  animation: rotate 5s linear 0s infinite forwards reverse;
+  background-color: yellow;
 }
 
 /* Home Section */
@@ -145,7 +174,7 @@ nav {
   display: flex;
 }
 
-.image-container {
+/* .image-container {
   border: 1px solid var(--secondary-color);
   border-radius: 10px;
   padding: 10px 20px;
@@ -158,10 +187,10 @@ nav {
 img {
   height: 300px;
   width: 300px;
-}
+} */
 
 /* Projects Section */
-.buttons {
+/* .buttons {
   margin-top: 15px;
   margin-bottom: 50px;
 }
@@ -210,7 +239,7 @@ button:hover:not(.outline) {
 .outline:hover {
   background: var(--primary-color);
   color: var(--on-primary);
-}
+} */
 
 .text-box {
   width: 40%;
@@ -228,7 +257,6 @@ p {
 
 /* Contact Section */
 .fab {
-  /* styles icons using code below */
   font-size: 100px;
   margin-right: 50px;
   cursor: pointer;
@@ -240,7 +268,7 @@ p {
 }
 
 /* Dark Mode Toggle */
-.theme-switch-wrapper {
+/* .theme-switch-wrapper {
   display: flex;
   align-items: center;
   z-index: 100;
@@ -313,7 +341,7 @@ input:checked + .slider::before {
 .fas {
   font-size: 30px;
   margin-right: 5px;
-}
+} */
 
 footer {
   background-color: #340BB7;

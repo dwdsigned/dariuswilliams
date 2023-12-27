@@ -62,7 +62,8 @@ nav {
   position: fixed;
   font-size: 24px;
   letter-spacing: 3px;
-  padding: 25px;
+  /* padding: 25px; */
+  padding: 0;
   width: 100vw;
   background: #340BB7;
 }
@@ -71,29 +72,56 @@ nav {
   display: inline-block;
 } */
 
+.navbar__menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 #logo {
   border: none;
   height: 125px;
   width: 125px;
-  margin: 0;
+  margin: 25px 0 25px 25px;
   background-image: url("./dwDev1.svg");
   background-size: contain;
   background-repeat: no-repeat;
 }
 
-.navbar__menu {
+#hamburger {
+  cursor: pointer;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  border: none;
+  height: 125px;
+  width: 125px;
+  margin: 25px 25px 25px 0;
+  margin-left: auto;
+  padding-left: 0;
+  padding-bottom: 0;
+  margin: 0;
+  /* text-align: right; */
+  /* margin-left: auto; */
+  margin-right: 5%;
+  align-self: auto;
 }
+
+#hamburger hr {
+  margin: 10% 0;
+  border: 5px solid rgb( 235 235 235);
+  border-radius: 0 25px 25px 0;
+}
+
+
 
 /* Dynamic Navigation <ul> */
 .navbar__menu ul {
   padding-left: 0;
+  padding-bottom: 0;
   margin: 0;
-  text-align: right;
+  /* text-align: right; */
   margin-left: auto;
-  margin-right: 1%;
+  margin-right: 5%;
 }
 
 /* Dynamic Navigation <li> */
@@ -139,6 +167,7 @@ nav {
   background-color: #1F066D;
   border: #ccc;
 } */
+
 
 .menu__link.active {
   color: rgb(253, 244, 101);
@@ -347,4 +376,50 @@ footer {
   background-color: #340BB7;
   color: rgb(235 235 235);
   text-align: center;
+}
+
+@media only screen and (max-width: 900px) {
+  /* Dynamic Navigation <ul> */
+  #navbar__list {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 901px) {
+  /* Hamburger div */
+  #hamburger {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 330px) {
+  #logo {
+    border: none;
+    height: 100px;
+    width: 100px;
+    margin: 12px 0 12px 12px;
+    background-image: url("./dwDev1.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  #hamburger {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    height: 100px;
+    width: 100px;
+    margin: 12px 12px 12px 0;
+    margin-left: auto;
+  
+    padding-left: 0;
+    padding-bottom: 0;
+    margin: 0;
+    /* text-align: right; */
+    /* margin-left: auto; */
+    margin-right: 5%;
+    align-self: auto;
+  }
+
+  
 }

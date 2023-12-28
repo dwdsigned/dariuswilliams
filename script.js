@@ -75,7 +75,7 @@ function changeActive() {
             if (secPosition.top >= 0 && secPosition.bottom <= window.innerHeight) {
                 // set its CSS class to 'active'
                 section.classList.add('active');
-                console.log(section);
+                // console.log(section);
                  // Adds and removes active class on the anchor elements based on the position of the section elements based on the section index
                 const anchorElements2 = document.querySelectorAll('.menu__link');
                 anchorElements2.forEach( function (anchor) {
@@ -92,6 +92,80 @@ function changeActive() {
 
 // Call the changeActive() inorder add/remove the 'active' class from section and anchor elements
   changeActive();
+
+// Rotates the <hr> tags for the hamburger menu
+function rotate() {
+    // Grabs first hr tag in hamburger menu and transforms
+    const hr1 = document.getElementById("hr1");
+    hr1.style.transform ="translate(10px, 40px) rotate(-45deg)";
+    hr1.style.transition = "transform .75s ease .75s";
+    // console.log(hr1);
+    // Grabs second hr tag in hamburger menu and transforms
+    const hr2 = document.getElementById("hr2");
+    hr2.style.transform = "translate(10px, 10px) rotate(45deg)";
+    hr2.style.transition = "transform .75s ease .75s";
+    // console.log(hr2);
+}
+
+// Returns the hamburger menu to normal
+function unrotate() {
+    // Grabs first hr tag in hamburger menu and transforms
+    const hr1 = document.getElementById("hr1");
+    hr1.style.transform ="translate(0px, 0px) rotate(0deg)";
+    hr1.style.transition = "transform .75s ease .75s";
+    // console.log(hr1);
+    // Grabs second hr tag in hamburger menu and transforms
+    const hr2 = document.getElementById("hr2");
+    hr2.style.transform = "translate(0px, 0px) rotate(0deg)";
+    hr2.style.transition = "transform .75s ease .75s";
+    // console.log(hr2);
+}
+
+
+
+// const hr1 = document.getElementById("hr1");
+
+// function transformed() {
+//     const hr1Transformed = hr1.style.transform ="translate(10px, 40px) rotate(-45deg)";
+// }
+
+
+
+
+// Get hamburger div by id
+const hamburgerDiv = document.getElementById("hamburger");
+hamburgerDiv.addEventListener("click", hamburgerMenu);
+
+let hamburgerMenuIsOpen = false;
+
+// Full function for hamburger menu
+function hamburgerMenu() {
+    if (!hamburgerMenuIsOpen) {
+        // console.log("right before calling the rotate function", hamburgerBoolean);
+        rotate();
+        console.log("rotate is working");
+        // hamburgerBoolean = true;
+        // console.log("after calling the rotate function", hamburgerBoolean);
+        hamburgerMenuIsOpen = true;
+    } else {
+        unrotate();
+        // hamburgerBoolean = false;
+        console.log("unrotate is working");
+        hamburgerMenuIsOpen = false;
+    };
+    // console.log("end of conditionals", hamburgerBoolean);
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

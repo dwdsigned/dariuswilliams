@@ -93,8 +93,8 @@ function changeActive() {
 // Call the changeActive() inorder add/remove the 'active' class from section and anchor elements
   changeActive();
 
-// Rotates the <hr> tags for the hamburger menu
-function rotate() {
+// Rotates the <hr> tags for the hamburger menu when it is clicked to open
+function openHamburgerMenu() {
     // Grabs first hr tag in hamburger menu and transforms
     const hr1 = document.getElementById("hr1");
     hr1.style.transform ="translate(10px, 40px) rotate(-45deg)";
@@ -107,8 +107,8 @@ function rotate() {
     // console.log(hr2);
 }
 
-// Returns the hamburger menu to normal
-function unrotate() {
+// Returns the hamburger menu to normal when it is clicked to close
+function  closeHamburgerMenu() {
     // Grabs first hr tag in hamburger menu and transforms
     const hr1 = document.getElementById("hr1");
     hr1.style.transform ="translate(0px, 0px) rotate(0deg)";
@@ -123,12 +123,6 @@ function unrotate() {
 
 
 
-// const hr1 = document.getElementById("hr1");
-
-// function transformed() {
-//     const hr1Transformed = hr1.style.transform ="translate(10px, 40px) rotate(-45deg)";
-// }
-
 
 
 
@@ -136,19 +130,21 @@ function unrotate() {
 const hamburgerDiv = document.getElementById("hamburger");
 hamburgerDiv.addEventListener("click", hamburgerMenu);
 
+// Global Variable for hamburgerMenu() for the conditionals statement. Set to false by default.
+    // This seems necessary since I'm not using something with an alterable state, like a checkbox
 let hamburgerMenuIsOpen = false;
 
 // Full function for hamburger menu
 function hamburgerMenu() {
     if (!hamburgerMenuIsOpen) {
-        // console.log("right before calling the rotate function", hamburgerBoolean);
-        rotate();
+        // Calls the 
+        openHamburgerMenu();
         console.log("rotate is working");
         // hamburgerBoolean = true;
         // console.log("after calling the rotate function", hamburgerBoolean);
         hamburgerMenuIsOpen = true;
     } else {
-        unrotate();
+        closeHamburgerMenu();
         // hamburgerBoolean = false;
         console.log("unrotate is working");
         hamburgerMenuIsOpen = false;

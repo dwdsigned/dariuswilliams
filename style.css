@@ -104,6 +104,8 @@ nav {
   /* margin-left: auto; */
   margin-right: 5%;
   align-self: auto;
+/* DO NOT USE ************* Google it.************* Removes the blue highlight when clicking on the Div. */
+  -webkit-tap-highlight-color: transparent;
 }
 
 #hamburger hr {

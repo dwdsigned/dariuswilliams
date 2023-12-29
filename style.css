@@ -116,6 +116,20 @@ nav {
   border-radius: 0 25px 25px 0;
 }
 
+/* Hamburger Menu Dropdown */
+#hamburger__menu {
+  border: 2px solid orange;
+  position: absolute;
+  top: 175px;
+  left: 75%;
+  box-sizing: border-box;
+}
+
+#hamburger__list {
+  display: flex;
+  flex-direction: column;
+}
+
 /* #hamburger #hr1:hover {
   transform: translate(0px, 30px) rotate(-45deg);
 }

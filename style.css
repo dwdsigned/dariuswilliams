@@ -29,6 +29,7 @@ body {
   margin: 0;
   /* color: var(--on-background);
   background-color: var(--background); */
+  /* overflow: hidden; */
   
 }
 
@@ -118,16 +119,36 @@ nav {
 
 /* Hamburger Menu Dropdown */
 #hamburger__menu {
-  border: 2px solid orange;
+  /* border: 2px solid orange; */
+  background-color: indigo;
+  
+  width: 51%;
+  height: 55vh;
   position: absolute;
   top: 175px;
-  left: 75%;
-  box-sizing: border-box;
+  /* Below is the position when the hamburger menu is off screen */
+  left: 100%;
+  /* Below is what is needed when the hamburger menu is visible */
+  /* left: 49%; */
+  /* overflow: hidden; */
+  /* box-sizing: border-box; */
 }
 
 #hamburger__list {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  color: whitesmoke;
+  font-size: 4em;
+  padding: 0;
+  margin: 0;
+}
+
+#hamburger__list li {
+  /* margin-top: .3em; */
+  margin: .1em;
 }
 
 /* #hamburger #hr1:hover {
@@ -397,6 +418,16 @@ input:checked + .slider::before {
   margin-right: 5px;
 } */
 
+#searchBar * {
+  display: inline-block;
+}
+
+#searchBar i {
+  height: 50px;
+  width: 50px;
+}
+
+
 footer {
   background-color: #340BB7;
   color: rgb(235 235 235);
@@ -447,4 +478,60 @@ footer {
   }
 
   
+}
+
+@media only screen and (max-width: 500px) {
+  #hamburger__menu {
+    /* background-color: indigo;
+    width: 51%;
+    height: 55vh;
+    position: absolute;
+    top: 175px;
+    left: 49%; */
+  }
+  
+  #hamburger__list {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    color: whitesmoke;
+    font-size: 4em;
+    padding: 0;
+    margin: 0; */
+    font-size: 3em;
+  }
+  
+  #hamburger__list li {
+    /* margin-top: .3em; */
+    /* margin: .1em; */
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #hamburger__list {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    color: whitesmoke;
+    font-size: 4em;
+    padding: 0;
+    margin: 0; */
+    font-size: 2em;
+  }
+}
+
+@media only screen and (max-width: 330px) {
+#hamburger__menu {
+  /* background-color: indigo;
+  width: 51%;
+  height: 55vh;
+  position: absolute;
+  top: 175px;
+  left: 49%; */
+  top: 124px;
+}
 }

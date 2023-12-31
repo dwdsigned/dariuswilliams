@@ -30,7 +30,7 @@ body {
   /* color: var(--on-background);
   background-color: var(--background); */
   /* overflow: hidden; */
-  
+  /* transform-box: content-box; */
 }
 
 section {
@@ -121,17 +121,18 @@ nav {
 #hamburger__menu {
   /* border: 2px solid orange; */
   background-color: indigo;
-  
   width: 51%;
   height: 55vh;
   position: absolute;
   top: 175px;
   /* Below is the position when the hamburger menu is off screen */
   left: 100%;
-  /* Below is what is needed when the hamburger menu is visible */
+  /* Below is what is needed when the hamburger menu is visible, when not using translate */
   /* left: 49%; */
   /* overflow: hidden; */
   /* box-sizing: border-box; */
+  /* Below is what is need to move the hamburger menu in a position to be viewed */
+  /* transform: translate(100%); */
 }
 
 #hamburger__list {
@@ -481,32 +482,12 @@ footer {
 }
 
 @media only screen and (max-width: 500px) {
-  #hamburger__menu {
-    /* background-color: indigo;
-    width: 51%;
-    height: 55vh;
-    position: absolute;
-    top: 175px;
-    left: 49%; */
-  }
   
   #hamburger__list {
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    list-style-type: none;
-    color: whitesmoke;
-    font-size: 4em;
-    padding: 0;
-    margin: 0; */
     font-size: 3em;
   }
   
-  #hamburger__list li {
-    /* margin-top: .3em; */
-    /* margin: .1em; */
-  }
+  
 }
 
 @media only screen and (max-width: 400px) {

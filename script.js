@@ -97,28 +97,43 @@ function changeActive() {
 function openHamburgerMenu() {
     // Grabs first hr tag in hamburger menu and transforms
     const hr1 = document.getElementById("hr1");
-    hr1.style.transform ="translate(10px, 40px) rotate(-45deg)";
     hr1.style.transition = "transform .75s ease .75s";
+    hr1.style.transform ="translate(10px, 40px) rotate(-45deg)";
     // console.log(hr1);
     // Grabs second hr tag in hamburger menu and transforms
     const hr2 = document.getElementById("hr2");
-    hr2.style.transform = "translate(10px, 10px) rotate(45deg)";
     hr2.style.transition = "transform .75s ease .75s";
+    hr2.style.transform = "translate(10px, 10px) rotate(45deg)";
     // console.log(hr2);
+    // Move hamburger menu into place
+    const hamburgerId = document.getElementById("hamburger__menu");
+    hamburgerId.removeAttribute("hidden");
+    console.log("grab id open", hamburgerId);
+    console.log("the menu should be in place");
+    hamburgerId.style.transition = "transform 1.5s ease .75s";
+    hamburgerId.style.transform = "translate(-100%)";
 }
 
 // Returns the hamburger menu to normal when it is clicked to close
 function  closeHamburgerMenu() {
+    // Grabs actual menu itself
+    const hamburgerId = document.getElementById("hamburger__menu");
+    console.log("grab id close", hamburgerId);
     // Grabs first hr tag in hamburger menu and transforms
     const hr1 = document.getElementById("hr1");
-    hr1.style.transform ="translate(0px, 0px) rotate(0deg)";
     hr1.style.transition = "transform .75s ease .75s";
+    hr1.style.transform ="translate(0px, 0px) rotate(0deg)";
     // console.log(hr1);
     // Grabs second hr tag in hamburger menu and transforms
     const hr2 = document.getElementById("hr2");
-    hr2.style.transform = "translate(0px, 0px) rotate(0deg)";
     hr2.style.transition = "transform .75s ease .75s";
+    hr2.style.transform = "translate(0px, 0px) rotate(0deg)";
     // console.log(hr2);
+    // Hides the menu for the hamburger menu
+    hamburgerId.style.transition = "transform 1.5s ease .75s";
+    hamburgerId.style.transform = "translate(100%)";
+    console.log("the menu should be hidden");
+    hamburgerId.setAttribute("hidden", "");
 }
 
 

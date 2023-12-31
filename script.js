@@ -93,25 +93,37 @@ function changeActive() {
 // Call the changeActive() inorder add/remove the 'active' class from section and anchor elements
   changeActive();
 
+
+
+// console.log(bodyElement);
+
+
 // Rotates the <hr> tags for the hamburger menu when it is clicked to open
 function openHamburgerMenu() {
+    // Grabs Body element
+    const bodyElement = document.querySelector("body");
+    // bodyElement.style.overflow = "hidden";
     // Grabs first hr tag in hamburger menu and transforms
     const hr1 = document.getElementById("hr1");
-    hr1.style.transition = "transform .75s ease .75s";
+    hr1.style.transition = "transform .5s ease .5s";
     hr1.style.transform ="translate(10px, 40px) rotate(-45deg)";
     // console.log(hr1);
     // Grabs second hr tag in hamburger menu and transforms
     const hr2 = document.getElementById("hr2");
-    hr2.style.transition = "transform .75s ease .75s";
+    hr2.style.transition = "transform .5s ease .5s";
     hr2.style.transform = "translate(10px, 10px) rotate(45deg)";
     // console.log(hr2);
     // Move hamburger menu into place
     const hamburgerId = document.getElementById("hamburger__menu");
     hamburgerId.removeAttribute("hidden");
+    const reflow = hamburgerId.offsetHeight;
+    console.log(reflow);
+    // reflow;
     console.log("grab id open", hamburgerId);
     console.log("the menu should be in place");
-    hamburgerId.style.transition = "transform 1.5s ease .75s";
+    hamburgerId.style.transition = "transform .5s linear .5s";
     hamburgerId.style.transform = "translate(-100%)";
+    hamburgerId.style.position = "fixed";
 }
 
 // Returns the hamburger menu to normal when it is clicked to close

@@ -21,9 +21,10 @@
   --background: #121212;
 } */
 
-html {
+/* html {
   box-sizing: border-box;
-}
+  overflow: hidden;
+} */
 
 body {
   margin: 0;
@@ -119,6 +120,7 @@ nav {
 
 /* Hamburger Menu Dropdown */
 #hamburger__menu {
+  z-index: 10;
   /* border: 2px solid orange; */
   background-color: indigo;
   width: 51%;
@@ -133,6 +135,9 @@ nav {
   /* box-sizing: border-box; */
   /* Below is what is need to move the hamburger menu in a position to be viewed */
   /* transform: translate(100%); */
+  /* Transition. Transform is in JavaScript */
+  /* transition: transform 1.5s linear .75s; */
+  /* transition: all 20s ease-out; */
 }
 
 #hamburger__list {

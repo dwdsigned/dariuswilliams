@@ -105,12 +105,12 @@ function openHamburgerMenu() {
     // bodyElement.style.overflow = "hidden";
     // Grabs first hr tag in hamburger menu and transforms
     const hr1 = document.getElementById("hr1");
-    hr1.style.transition = "transform .5s ease .5s";
+    hr1.style.transition = "transform .5s linear .5s";
     hr1.style.transform ="translate(10px, 40px) rotate(-45deg)";
     // console.log(hr1);
     // Grabs second hr tag in hamburger menu and transforms
     const hr2 = document.getElementById("hr2");
-    hr2.style.transition = "transform .5s ease .5s";
+    hr2.style.transition = "transform .5s linear .5s";
     hr2.style.transform = "translate(10px, 10px) rotate(45deg)";
     // console.log(hr2);
     // Move hamburger menu into place

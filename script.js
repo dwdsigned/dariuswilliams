@@ -20,15 +20,17 @@
 
 // Global variables
 
-// Grabs the Ul element
+// Grabs the Ul element for the desktop menu
 const navMenu = document.querySelector('#navbar__list');
+// Grabs the UL element for mobile menu
+// const hamburgerMenuElement = document.querySelector('#hamburger__menu');
 // Grabs all sections elements
 const sectionElements = document.querySelectorAll('section');
 // Grab all h1 elements
 const headerElements = document.querySelectorAll('h1');
 // 
 
-// Dynamically builds a navigation menu
+// Dynamically builds a navigation menu for desktop
 function buildMenu() {
     // For loop to iterate through all the section elements
     for (i = 0; i < sectionElements.length; i++) {
@@ -95,7 +97,83 @@ function changeActive() {
 
 
 
-// console.log(bodyElement);
+// Below is the beginning of the Hamburger menu. It involves multiple functions. Some functions are nested.
+// *********************************************************************************************
+    // Right below is test code for dynamically building the hamburger menu
+//*********************************************************************************************** */
+// Dynamically builds a navigation menu for mobile Hamburger Menu
+
+// Grabs the UL element for mobile menu
+const hamburgerMenuElement = document.querySelector('#hamburger__list');
+function buildHamburgerMenuLinks() {
+    // For loop to iterate through all the section elements
+    for (i = 0; i < sectionElements.length; i++) {
+        // Assigns section based on its position in the nodelist
+        const section = sectionElements[i];
+        // Assigns the id of the corresponding section
+        const sectionId = section.id;
+        // Assigns dataset attribute to a variable
+        const dataNavigate = section.dataset.nav;
+        // Generates Headers Dynamically
+        // headerElements[i].textContent = dataNavigate;
+        // Create li element
+        const navListElement = document.createElement('li');
+        // Create anchor element
+        const navAnchorElement = document.createElement('a');
+        // Sets the visible text of anchor tags to the value of the dataset value(s)
+        navAnchorElement.textContent = dataNavigate;
+        // Sets the href of anchor elements
+        navAnchorElement.href = `#${sectionId}`;
+        // Adds the 'menu__link' class to every anchor element
+        // navAnchorElement.classList.add('menu__link');
+        // Click Event listener for the anchor element allowing smooth scrolling when clicking on the anchor element
+        navAnchorElement.addEventListener('click', function(event) {
+            event.preventDefault();
+            section.scrollIntoView({ behavior: 'smooth'});
+        });
+        // Adds the anchor element that was created to the li element that was created
+        navListElement.appendChild(navAnchorElement);
+        // Adds the li element with anchor element to the ul element
+        hamburgerMenuElement.appendChild(navListElement);
+    };
+  }
+
+//  Calls hamburger menu
+buildHamburgerMenuLinks();
+
+
+
+// *********************************************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Rotates the <hr> tags for the hamburger menu when it is clicked to open
@@ -123,26 +201,26 @@ function openHamburgerMenu() {
     console.log("the menu should be in place");
     hamburgerId.style.transition = "transform .5s linear .5s";
     hamburgerId.style.transform = "translate(-100%)";
-    hamburgerId.style.position = "fixed";
+    // hamburgerId.style.position = "fixed";
 }
 
-// Returns the hamburger menu to normal when it is clicked to close
+// Closes the hamburger menu
 function  closeHamburgerMenu() {
     // Grabs actual menu itself
     const hamburgerId = document.getElementById("hamburger__menu");
     console.log("grab id close", hamburgerId);
     // Grabs first hr tag in hamburger menu and transforms
     const hr1 = document.getElementById("hr1");
-    hr1.style.transition = "transform .75s ease .75s";
+    hr1.style.transition = "transform .5s linear .5s"; 
     hr1.style.transform ="translate(0px, 0px) rotate(0deg)";
     // console.log(hr1);
     // Grabs second hr tag in hamburger menu and transforms
     const hr2 = document.getElementById("hr2");
-    hr2.style.transition = "transform .75s ease .75s";
+    hr2.style.transition = "transform .5s linear .5s";
     hr2.style.transform = "translate(0px, 0px) rotate(0deg)";
     // console.log(hr2);
     // Hides the menu for the hamburger menu
-    hamburgerId.style.transition = "transform 1.5s ease .75s";
+    hamburgerId.style.transition = "transform .5s linear .5s";
     hamburgerId.style.transform = "translate(100%)";
     console.log("the menu should be hidden");
     hamburgerId.setAttribute("hidden", "");
@@ -164,16 +242,12 @@ let hamburgerMenuIsOpen = false;
 // Full function for hamburger menu
 function hamburgerMenu() {
     if (!hamburgerMenuIsOpen) {
-        // Calls the 
+        // Calls the openHamburgerMenu(). This opens the hamburger menu.
         openHamburgerMenu();
-        console.log("rotate is working");
-        // hamburgerBoolean = true;
-        // console.log("after calling the rotate function", hamburgerBoolean);
         hamburgerMenuIsOpen = true;
     } else {
+        // Calls the closeHamburgerMenu(). This closes the hamburger menu.
         closeHamburgerMenu();
-        // hamburgerBoolean = false;
-        console.log("unrotate is working");
         hamburgerMenuIsOpen = false;
     };
     // console.log("end of conditionals", hamburgerBoolean);

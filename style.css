@@ -43,7 +43,7 @@ section {
 }
 
 h1 {
-  font-size: 100px;
+  font-size: 4rem;
   margin-bottom: 0;
 }
 
@@ -91,7 +91,7 @@ nav {
 }
 
 #hamburger {
-  cursor: pointer;
+  /* cursor: pointer; */
   display: flex;
   flex-direction: column;
   border: none;
@@ -125,7 +125,7 @@ nav {
   background-color: indigo;
   width: 51%;
   height: 55vh;
-  position: absolute;
+  position: fixed;
   top: 175px;
   /* Below is the position when the hamburger menu is off screen */
   left: 100%;
@@ -140,7 +140,7 @@ nav {
   /* transition: all 20s ease-out; */
 }
 
-#hamburger__list {
+#hamburger__list{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -156,6 +156,24 @@ nav {
   /* margin-top: .3em; */
   margin: .1em;
 }
+
+#hamburger__list a:link {
+  color: white;
+  text-decoration: none;
+}
+
+#hamburger__list a:visited {
+  color: white;
+}
+
+#hamburger__list a:hover {
+  color: white;
+}
+
+#hamburger__list a:active {
+  color: yellow;
+}
+
 
 /* #hamburger #hr1:hover {
   transform: translate(0px, 30px) rotate(-45deg);
@@ -440,6 +458,10 @@ footer {
   text-align: center;
 }
 
+#usePortrait {
+  display: none;
+}
+
 @media only screen and (max-width: 900px) {
   /* Dynamic Navigation <ul> */
   #navbar__list {
@@ -450,6 +472,10 @@ footer {
 @media only screen and (min-width: 901px) {
   /* Hamburger div */
   #hamburger {
+    display: none;
+  }
+
+  #hamburger__menu {
     display: none;
   }
 }
@@ -520,4 +546,38 @@ footer {
   left: 49%; */
   top: 124px;
 }
+}
+
+@media screen and (max-height: 601px) {
+  /* Hides screen and tells user to turn device to portrait mode or to view the website on Desktop */
+  #usePortrait {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: auto 0;
+  z-index: 100;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  opacity: 1;
+  }
+
+  #usePortrait h1 {
+    font-size: 2em;
+  }
+
+  #usePortrait p {
+    font-size: 1.5rem;
+    line-height: 1em;
+  }
+
+
+  header, section, footer, #hamburger__menu {
+    display: none;
+  }
+  
+  body {
+    overflow: hidden;
+  }
 }

@@ -1,3 +1,5 @@
+import { transitionHiddenElement } from '@cloudfour/transition-hidden-element';
+
 /**
  * 
  * Manipulating the DOM exercise.
@@ -148,6 +150,29 @@ buildHamburgerMenuLinks();
 
 
 
+// *******  NPM  *******************vvvvvvvvvvvvvvvvvvvvvvvvvvv
+
+
+
+// Initialize our menu
+const menuTransitioner = transitionHiddenElement({
+    element: document.getElementById("hamburger__menu"),
+    visibleClass: 'slideIn',
+    waitMode: 'transitionend',
+    hideMode: 'hidden',
+  });
+  
+  document.querySelector('#hamburger__menu').addEventListener('click', () => {
+    menuTransitioner.show();
+  });
+  
+//   document.querySelector('#close-menu-button').addEventListener('click', () => {
+//     menuTransitioner.close();
+//   });
+
+
+
+// *******  NPM  *******************^^^^^^^^^^^^^^^^^^^^^^^^
 
 
 
@@ -167,91 +192,88 @@ buildHamburgerMenuLinks();
 
 
 
+// // Rotates the <hr> tags for the hamburger menu when it is clicked to open
+// function openHamburgerMenu() {
+//     // Grabs Body element
+//     const bodyElement = document.querySelector("body");
+//     // bodyElement.style.overflow = "hidden";
+//     // Grabs first hr tag in hamburger menu and transforms
+//     const hr1 = document.getElementById("hr1");
+//     hr1.style.transition = "transform .5s linear .5s";
+//     hr1.style.transform ="translate(10px, 40px) rotate(-45deg)";
+//     // console.log(hr1);
+//     // Grabs second hr tag in hamburger menu and transforms
+//     const hr2 = document.getElementById("hr2");
+//     hr2.style.transition = "transform .5s linear .5s";
+//     hr2.style.transform = "translate(10px, 10px) rotate(45deg)";
+//     // console.log(hr2);
+//     // Move hamburger menu into place
+//     const hamburgerId = document.getElementById("hamburger__menu");
+//     hamburgerId.removeAttribute("hidden");
+//     const reflow = hamburgerId.offsetHeight;
+//     console.log(reflow);
+//     // reflow;
+//     console.log("grab id open", hamburgerId);
+//     console.log("the menu should be in place");
+//     hamburgerId.style.transition = "transform .5s linear .5s";
+//     hamburgerId.style.transform = "translate(-100%)";
+//     // hamburgerId.style.position = "fixed";
+// }
+
+// // Closes the hamburger menu
+// function  closeHamburgerMenu() {
+//     // Grabs actual menu itself
+//     const hamburgerId = document.getElementById("hamburger__menu");
+//     console.log("grab id close", hamburgerId);
+//     const reflow = hamburgerId.offsetHeight;
+//     reflow;
+//     console.log(reflow);
+//     // Grabs first hr tag in hamburger menu and transforms
+//     const hr1 = document.getElementById("hr1");
+//     hr1.style.transition = "transform .5s linear .5s"; 
+//     hr1.style.transform ="translate(0px, 0px) rotate(0deg)";
+//     // console.log(hr1);
+//     // Grabs second hr tag in hamburger menu and transforms
+//     const hr2 = document.getElementById("hr2");
+//     hr2.style.transition = "transform .5s linear .5s";
+//     hr2.style.transform = "translate(0px, 0px) rotate(0deg)";
+//     // console.log(hr2);
+//     // const reflow = hamburgerId.offsetHeight;
+//     // reflow;
+//     // console.log(reflow);
+//     // Hides the menu for the hamburger menu
+//     hamburgerId.style.transition = "transform .5s linear .5s";
+//     hamburgerId.style.transform = "translate(100%)";
+//     console.log("the menu should be hidden");
+//     hamburgerId.setAttribute("hidden", "");
+// }
 
 
 
 
 
 
+// // Get hamburger div by id
+// const hamburgerDiv = document.getElementById("hamburger");
+// hamburgerDiv.addEventListener("click", hamburgerMenu);
 
+// // Global Variable for hamburgerMenu() for the conditionals statement. Set to false by default.
+//     // This seems necessary since I'm not using something with an alterable state, like a checkbox
+// let hamburgerMenuIsOpen = false;
 
-
-// Rotates the <hr> tags for the hamburger menu when it is clicked to open
-function openHamburgerMenu() {
-    // Grabs Body element
-    const bodyElement = document.querySelector("body");
-    // bodyElement.style.overflow = "hidden";
-    // Grabs first hr tag in hamburger menu and transforms
-    const hr1 = document.getElementById("hr1");
-    hr1.style.transition = "transform .5s linear .5s";
-    hr1.style.transform ="translate(10px, 40px) rotate(-45deg)";
-    // console.log(hr1);
-    // Grabs second hr tag in hamburger menu and transforms
-    const hr2 = document.getElementById("hr2");
-    hr2.style.transition = "transform .5s linear .5s";
-    hr2.style.transform = "translate(10px, 10px) rotate(45deg)";
-    // console.log(hr2);
-    // Move hamburger menu into place
-    const hamburgerId = document.getElementById("hamburger__menu");
-    hamburgerId.removeAttribute("hidden");
-    const reflow = hamburgerId.offsetHeight;
-    console.log(reflow);
-    // reflow;
-    console.log("grab id open", hamburgerId);
-    console.log("the menu should be in place");
-    hamburgerId.style.transition = "transform .5s linear .5s";
-    hamburgerId.style.transform = "translate(-100%)";
-    // hamburgerId.style.position = "fixed";
-}
-
-// Closes the hamburger menu
-function  closeHamburgerMenu() {
-    // Grabs actual menu itself
-    const hamburgerId = document.getElementById("hamburger__menu");
-    console.log("grab id close", hamburgerId);
-    // Grabs first hr tag in hamburger menu and transforms
-    const hr1 = document.getElementById("hr1");
-    hr1.style.transition = "transform .5s linear .5s"; 
-    hr1.style.transform ="translate(0px, 0px) rotate(0deg)";
-    // console.log(hr1);
-    // Grabs second hr tag in hamburger menu and transforms
-    const hr2 = document.getElementById("hr2");
-    hr2.style.transition = "transform .5s linear .5s";
-    hr2.style.transform = "translate(0px, 0px) rotate(0deg)";
-    // console.log(hr2);
-    // Hides the menu for the hamburger menu
-    hamburgerId.style.transition = "transform .5s linear .5s";
-    hamburgerId.style.transform = "translate(100%)";
-    console.log("the menu should be hidden");
-    hamburgerId.setAttribute("hidden", "");
-}
-
-
-
-
-
-
-// Get hamburger div by id
-const hamburgerDiv = document.getElementById("hamburger");
-hamburgerDiv.addEventListener("click", hamburgerMenu);
-
-// Global Variable for hamburgerMenu() for the conditionals statement. Set to false by default.
-    // This seems necessary since I'm not using something with an alterable state, like a checkbox
-let hamburgerMenuIsOpen = false;
-
-// Full function for hamburger menu
-function hamburgerMenu() {
-    if (!hamburgerMenuIsOpen) {
-        // Calls the openHamburgerMenu(). This opens the hamburger menu.
-        openHamburgerMenu();
-        hamburgerMenuIsOpen = true;
-    } else {
-        // Calls the closeHamburgerMenu(). This closes the hamburger menu.
-        closeHamburgerMenu();
-        hamburgerMenuIsOpen = false;
-    };
-    // console.log("end of conditionals", hamburgerBoolean);
-}
+// // Full function for hamburger menu
+// function hamburgerMenu() {
+//     if (!hamburgerMenuIsOpen) {
+//         // Calls the openHamburgerMenu(). This opens the hamburger menu.
+//         openHamburgerMenu();
+//         hamburgerMenuIsOpen = true;
+//     } else {
+//         // Calls the closeHamburgerMenu(). This closes the hamburger menu.
+//         closeHamburgerMenu();
+//         hamburgerMenuIsOpen = false;
+//     };
+//     // console.log("end of conditionals", hamburgerBoolean);
+// }
 
 
 

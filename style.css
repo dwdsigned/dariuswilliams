@@ -462,16 +462,6 @@ footer {
   display: none;
 }
 
-.slideIn {
-  transition: transform .5s linear .5s;
-  transform: translate(-100%);
-}
-
-.slideOut {
-  transition: transform .5s linear .5s;
-  transform: translate(100%);
-}
-
 @media only screen and (max-width: 900px) {
   /* Dynamic Navigation <ul> */
   #navbar__list {
